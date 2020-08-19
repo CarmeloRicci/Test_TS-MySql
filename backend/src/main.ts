@@ -1,12 +1,18 @@
 import * as express from 'express';
 const bodyParser = require('body-parser');
 const app = express()
-var config = require('Knexfile.js');
-var knex = require('knex')(config[process.env.NODE_ENV]);
 
+var knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host : '172.18.0.2',
+    user : 'melo',
+    password : 'melo',
+    database : 'test'
+  }
+});
 
 app.use(bodyParser.json());
-
 
 
 app.get("/", (req, res) => {

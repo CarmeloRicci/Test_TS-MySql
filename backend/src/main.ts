@@ -29,6 +29,18 @@ app.get("/users", (req, res) => {
 
 app.get("/new_users", (req, res) => {
 
+
+  knex.from('User').select("*")
+      .then((rows) => {
+          for (row of rows) {
+              console.log(`${row['id']} ${row['nome']}`);
+          }
+      }).catch((err) => { console.log( err); throw err })
+      .finally(() => {
+          knex.destroy();
+      });
+
+
   let t = knex('User').select('*')
   //res.send( t )
   console.log( t )

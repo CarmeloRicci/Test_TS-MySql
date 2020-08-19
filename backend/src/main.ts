@@ -29,11 +29,12 @@ app.get("/users", (req, res) => {
 
 app.get("/new_users", (req, res) => {
 
-
+let t = new Array;
   knex.from('User').select("*")
       .then((rows: any) => {
           for (let row of rows) {
               console.log(`${row['id']} ${row['nome']}`);
+              t.push(`${row['id']}`, `${row['nome']}`)
           }
       }).catch((err) => { console.log( err); throw err })
       .finally(() => {
@@ -41,8 +42,7 @@ app.get("/new_users", (req, res) => {
       });
 
 
-  let t = knex('User').select('*')
-  //res.send( t )
+  res.send( t )
   console.log( t )
 
 })

@@ -107,7 +107,7 @@ require('./passport').setupStrategies(passport);
 // require('./shared/watcher');
 
 
-app.listen(3880, () => {
+app.listen(3003, () => {
   console.log('Application listening on port 3880!');
 });
 

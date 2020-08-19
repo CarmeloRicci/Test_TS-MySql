@@ -1,6 +1,9 @@
 import * as express from 'express';
 const bodyParser = require('body-parser');
 const app = express()
+var config = require('Knexfile');
+var knex = require('knex')(config[process.env.NODE_ENV]);
+
 
 app.use(bodyParser.json());
 
@@ -17,13 +20,16 @@ app.get("/users", (req, res) => {
   const user2 = { firstName: "Kevin", lastName: "Durant" }
   res.json([user1, user2])
 })
-// localhost: 3083}
+
+app.get("/new_users", (req, res) => {
+  res.json( knex('User').select('*') )
+})
+
+
 app.listen(3003, () => {
   console.log("Server is up and listening on 3003...")
 
 }
-
-
 
 
 

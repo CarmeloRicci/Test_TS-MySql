@@ -61,8 +61,8 @@ const bodyParser = require('body-parser');
 const cfg = require('config');
 const path = require('path');
 const dotenv = require('dotenv');
-const expressJwt = require('express-jwt');
-const authenticate = expressJwt({ secret: cfg.jwt.jwtSecret });
+// const expressJwt = require('express-jwt');
+// const authenticate = expressJwt({ secret: cfg.jwt.jwtSecret });
 const envFilename = path.join(
   __dirname,
   '../',

@@ -29,8 +29,7 @@ app.get("/users", (req, res) => {
 
 app.get("/new_users", (req, res) => {
 
-  let t = knex.raw(`SELECT *
-            FROM User`)
+  let t = knex.raw(`SELECT nome FROM User`)
   res.send( t )
   console.log( t )
 

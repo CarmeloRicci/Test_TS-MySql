@@ -31,8 +31,8 @@ app.get("/new_users", (req, res) => {
 
 
   knex.from('User').select("*")
-      .then((rows) => {
-          for (row of rows) {
+      .then((rows: any) => {
+          for (let row of rows) {
               console.log(`${row['id']} ${row['nome']}`);
           }
       }).catch((err) => { console.log( err); throw err })

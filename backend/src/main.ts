@@ -18,7 +18,7 @@ app.get("/users", (req, res) => {
   res.json([user1, user2])
 })
 // localhost: 3083}
-app.Listen(3003, () => {
+app.listen(3003, () => {
   console.log("Server is up and listening on 3003...")
 
 }

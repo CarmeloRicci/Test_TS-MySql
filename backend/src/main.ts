@@ -28,8 +28,13 @@ app.get("/users", (req, res) => {
 })
 
 app.get("/new_users", (req, res) => {
-  res.send( knex.select().table('User') )
-  console.log( knex.select().table('User') )
+
+  let t = knex.raw(`SELECT *
+            FROM User`)
+  res.send( t )
+  res.json( t )
+  console.log( t )
+
 })
 
 

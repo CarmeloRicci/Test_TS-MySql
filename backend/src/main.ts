@@ -32,7 +32,6 @@ app.get("/new_users", (req, res) => {
   let t = knex.raw(`SELECT *
             FROM User`)
   res.send( t )
-  res.json( t )
   console.log( t )
 
 })

@@ -76,7 +76,7 @@ app.use(bodyParser.json());
 
 const passport = require('passport');
 
-require('passport').setupStrategies(passport);
+// require('passport').setupStrategies(passport);
 
 // const pubApiDNSRoute = require('./routes/public/dnsRoutes');
 // const pubApiUserRoutes = require('./routes/public/userRoutes')(passport);

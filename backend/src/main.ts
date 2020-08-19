@@ -42,7 +42,7 @@ let t = new Array;
       });
 
 
-  res.send( t )
+  res.json(t)
   console.log( t )
 
 })

@@ -28,7 +28,8 @@ app.get("/users", (req, res) => {
 })
 
 app.get("/new_users", (req, res) => {
-  res.json( knex('User').select('*') )
+  res.send( knex('User').select('*') )
+  console.log( knex('User').select('*') )
 })
 
 
